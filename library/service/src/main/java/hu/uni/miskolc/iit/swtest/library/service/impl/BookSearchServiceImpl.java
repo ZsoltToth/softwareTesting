@@ -1,5 +1,7 @@
 package hu.uni.miskolc.iit.swtest.library.service.impl;
 
+import hu.uni.miskolc.iit.swtest.library.dao.BookDAO;
+import hu.uni.miskolc.iit.swtest.library.dao.exceptions.BookNotFoundException;
 import hu.uni.miskolc.iit.swtest.library.model.Author;
 import hu.uni.miskolc.iit.swtest.library.model.Book;
 import hu.uni.miskolc.iit.swtest.library.model.BookInstance;
@@ -16,25 +18,38 @@ import java.util.Collection;
 public class BookSearchServiceImpl implements BookSearchService
 {
 
+    private BookDAO dao;
+
+    public BookSearchServiceImpl(BookDAO dao) {
+        this.dao = dao;
+    }
 
     public Collection<Book> listBooks() {
-        return null;
+        return dao.readAllBooks();
     }
 
     public Collection<Book> listBooksByGenre(Genre genre) {
-        return null;
+        return dao.readBooksByGenre(genre);
     }
 
     public Collection<Book> listBooksByAuthor(Author author) {
-        return null;
+        return dao.readBooksByAuthor(author);
     }
 
     public Book searchBookByTitle(String title) throws BookNotExistsException {
-        return null;
+        try {
+            return dao.readBookByTitle(title);
+        } catch (BookNotFoundException e) {
+            throw new BookNotExistsException(title,e);
+        }
     }
 
     public Book searchBookByISBN(String isbn) throws BookNotExistsException {
-        return null;
+        try {
+            return dao.readBookByISBN(isbn);
+        } catch (BookNotFoundException e) {
+            throw new BookNotExistsException(isbn,e);
+        }
     }
 
     public Collection<BookInstance> listInstancesOfBook(Book book) {
