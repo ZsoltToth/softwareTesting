@@ -1,0 +1,30 @@
+[
+  {
+    "isbn": "isbn1",
+    "title": "book1",
+    "price": 42.0,
+    "authors": [
+      {
+        "name": "John Doe",
+        "nationality": "GB"
+      }
+    ],
+    "genre": [
+      "NOVEL"
+    ]
+  },
+  {
+    "isbn": "isbn2",
+    "title": "book2",
+    "price": 42.0,
+    "authors": [
+      {
+        "name": "John Doe",
+        "nationality": "GB"
+      }
+    ],
+    "genre": [
+      "NOVEL"
+    ]
+  }
+]
