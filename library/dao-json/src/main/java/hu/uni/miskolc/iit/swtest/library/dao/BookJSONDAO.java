@@ -35,7 +35,9 @@ public class BookJSONDAO implements BookDAO
                 result. add(bean.extract());
             }
         } catch (IOException e) {
+            System.out.println(database.getAbsolutePath());
             e.printStackTrace();
+
         }
         return result;
     }
