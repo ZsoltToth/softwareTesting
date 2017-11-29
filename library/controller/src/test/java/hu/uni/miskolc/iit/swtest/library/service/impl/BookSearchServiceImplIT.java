@@ -1,7 +1,8 @@
-package hu.uni.miskolc.iit.swtest.library.core.service.impl;
+package hu.uni.miskolc.iit.swtest.library.service.impl;
 
 import hu.uni.miskolc.iit.swtest.library.core.dao.BookDAO;
 import hu.uni.miskolc.iit.swtest.library.core.service.BookSearchService;
+import hu.uni.miskolc.iit.swtest.library.core.service.impl.BookSearchServiceImpl;
 import hu.uni.miskolc.iit.swtest.library.dao.BookJSONDAO;
 import org.junit.Before;
 import org.junit.Test;
