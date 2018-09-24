@@ -54,7 +54,7 @@ public class IPAddress {
         this(new int[] {p1,p2,p3,p4});
     }
 
-    private boolean testIntegerRange(int num){
+    protected boolean testIntegerRange(int num){
         return  0 <= num && num <= 255;
     }
 

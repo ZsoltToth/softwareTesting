@@ -60,4 +60,34 @@ public class IPAddressTest {
     public void testArrayConstructorWithValidParameters() throws MalformattedIPAddressException {
         new IPAddress(new int[] {255,255,255,255});
     }
+
+    @Test
+    public void testRangeFunctionWithinRangeMaximum() throws MalformattedIPAddressException {
+        IPAddress address = new IPAddress(new int[] {255,255,255,255});
+        assertTrue(address.testIntegerRange(255));
+    }
+
+    @Test
+    public void testRangeFunctionWithinRangeMinimum() throws MalformattedIPAddressException {
+        IPAddress address = new IPAddress(new int[] {255,255,255,255});
+        assertTrue(address.testIntegerRange(0));
+    }
+
+    @Test
+    public void testRangeFunctionWithOutRangeMaximum() throws MalformattedIPAddressException {
+        IPAddress address = new IPAddress(new int[] {255,255,255,255});
+        assertFalse(address.testIntegerRange(256));
+    }
+
+    @Test
+    public void testRangeFunctionWithOutRangeMinimum() throws MalformattedIPAddressException {
+        IPAddress address = new IPAddress(new int[] {255,255,255,255});
+        assertFalse(address.testIntegerRange(-1));
+    }
+
+    @Test
+    public void testRangeFunctionWithinRangeSomewhere() throws MalformattedIPAddressException {
+        IPAddress address = new IPAddress(new int[] {255,255,255,255});
+        assertTrue(address.testIntegerRange(128));
+    }
 }
