@@ -25,7 +25,7 @@ public class NetworkMask {
      * Mask is given int ipAddress/length notation;
      * @param mask
      */
-    public NetworkMask(String mask){
+    public NetworkMask(IPAddress networkAddress, String mask){
         //TODO Implement it :)
     }
 
