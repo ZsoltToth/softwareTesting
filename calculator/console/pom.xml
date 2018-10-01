@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>console</artifactId>
-
+    <version>1.0.8</version>
     <name>console</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
@@ -31,6 +31,11 @@
         <dependency>
             <groupId>hu.uni.miskolc.iit.swtest.calculator</groupId>
             <artifactId>controller</artifactId>
+            <version>1.0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>hu.uni.miskolc.iit.swtest.calculator</groupId>
+            <artifactId>service</artifactId>
             <version>1.0.7</version>
         </dependency>
     </dependencies>
