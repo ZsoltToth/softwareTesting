@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>console</artifactId>
+    <artifactId>controller</artifactId>
 
-    <name>console</name>
+    <name>controller</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -30,7 +30,7 @@
         </dependency>
         <dependency>
             <groupId>hu.uni.miskolc.iit.swtest.calculator</groupId>
-            <artifactId>controller</artifactId>
+            <artifactId>service</artifactId>
             <version>1.0.7</version>
         </dependency>
     </dependencies>
