@@ -4,6 +4,8 @@ import hu.uni.miskolc.iit.swtest.calculator.controller.CalculatorController;
 import hu.uni.miskolc.iit.swtest.calculator.core.Calculator;
 import hu.uni.miskolc.iit.swtest.calculator.core.exceptions.DivideByZeroException;
 import hu.uni.miskolc.iit.swtest.calculator.service.CalculatorImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * Hello world!
@@ -11,16 +13,12 @@ import hu.uni.miskolc.iit.swtest.calculator.service.CalculatorImpl;
  */
 public class App 
 {
-    private static CalculatorController calculatorController;
-
-    //This part should be change to Spring ApplicationContext based initialization.
-    static {
-        Calculator calculator = new CalculatorImpl();
-        calculatorController = new CalculatorController(calculator);
-    }
 
     public static void main( String[] args ) throws DivideByZeroException {
-        System.out.println( "Hello World!" );
+        ApplicationContext context = new AnnotationConfigApplicationContext(ConsoleApplicationContext.class);
+        CalculatorController calculatorController = (CalculatorController) context.getBean("calculatorController");
+        System.out.println(context.getBean("helloWorld"));
+
         System.out.println(calculatorController.calculate("5+3"));
     }
 }
